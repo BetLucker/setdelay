@@ -1,0 +1,30 @@
+{
+  "name": "Set Delay Bot",
+  "description": "A simple Python bot to manage delays.",
+  "keywords": ["bot", "python", "heroku"],
+  "repository": "https://github.com/betlucker/setdelay",
+  "env": {
+    "TOKEN": {
+      "description": "7749031474:AAGDCmV6nW_VKd_tR1G_WN4_thet-dsuN2k",
+      "required": true
+    },
+    "OTHER_ENV_VAR": {
+      "description": "Other environment variable needed for your bot",
+      "required": false
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "python bot.py"
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
